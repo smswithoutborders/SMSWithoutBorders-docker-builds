@@ -1,38 +1,12 @@
 version: "3.3"
 services:
-  frontend:
-    image: "smswithoutborders/frontend"
-    container_name: frontend
+  smswithoutborders:
+    image: "smswithoutborders"
+    container_name: smswithoutborders
     build:
       context: .
-      dockerfile: ./docker/frontend.Dockerfile
     env_file:
-      - ./frontend/.env.production.local
-    network_mode: "host"
-  backend:
-    image: "smswithoutborders/backend"
-    container_name: backend
-    build:
-      context: .
-      dockerfile: ./docker/backend.Dockerfile
+      - .env
     network_mode: "host"
     ports:
-      - "9000:9000"
-  gateway-server:
-    image: "smswithoutborders/gateway-server"
-    container_name: gateway-server
-    build:
-      context: .
-      dockerfile: ./docker/gateway-server.Dockerfile
-    network_mode: "host"
-    ports:
-      - "15000:15000"
-  sync-server:
-    image: "smswithoutborders/sync-server"
-    container_name: sync-server
-    build:
-      context: .
-      dockerfile: ./docker/sync-server.Dockerfile
-    network_mode: "host"
-    ports:
-      - "6996:6996"
+      - "80:80"

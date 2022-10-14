@@ -2,10 +2,10 @@
 
 Build SMSWithoutBorders microservices with docker
 
-## Requirements 
+## Requirements
 
 - docker
-- docker-compose 
+- docker-compose
 - GNU make
 
 ## Configuration
@@ -19,7 +19,7 @@ After cloning start the build script and follow along. Make sure you have all cr
 The build script will build all docker images
 
 ```bash
-./build.sh
+make
 ```
 
 **Note** When configuring the backend,
@@ -47,14 +47,11 @@ ORIGINS=["https://127.0.0.1"]
 
 ## Running containers
 
-After as successful build, 4 images are created
+After as successful build, 1 image is created
 
-- smswithoutborders/frontend
-- smswithoutborders/backend
-- smswithoutborders/gateway-server
-- smswithoutborders/sync-server
+- smswithoutborders:[tag]
 
-Start containers with docker-compose as daemons
+Start container with docker-compose as daemons
 
 ```bash
 docker-compose up -d
@@ -63,7 +60,7 @@ docker-compose up -d
 View container logs
 
 ```bash
-docker-compose logs -f <container name e.g frontend>
+docker-compose logs -f smswithoutborders
 ```
 
 Stop containers
