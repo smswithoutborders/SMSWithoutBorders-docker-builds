@@ -1,4 +1,9 @@
 *.diff
 
+# cloned folders
 frontend
+backend
+platforms
+
+# configs
 .env

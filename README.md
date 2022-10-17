@@ -25,14 +25,14 @@ make
 **Note** When configuring the backend,
 
 - Set mysql host to `127.0.0.1` so that it can communicate with the host system database over tcp. `localhost` will not work
-- Set custom platform paths to point to `./custom_platforms/<platform name>` folder which will be created in the backend container at build time.
+- Set custom platform paths to point to `../../platforms/<platform name>` folder which will be created in the backend container at build time.
 
 ```bash
 [PLATFORMS]
-GMAIL=./custom_platforms/gmail/gmail_app.py
-SLACK=./custom_platforms/slack/slack_app.py
-TWITTER=./custom_platforms/twitter/twitter_app.py
-TELEGRAM=./custom_platforms/telegram/telegram_app.py
+GMAIL=../../platforms/gmail/gmail_app.py
+SLACK=../../platforms/slack/slack_app.py
+TWITTER=../../platforms/twitter/twitter_app.py
+TELEGRAM=../../platforms/telegram/telegram_app.py
 ```
 
 - Be sure to add `127.0.0.1` to the allowed origins array since the frontend will be running on port `80`
